@@ -1,0 +1,28 @@
+{
+  "name": "static-job-listings-master",
+  "version": "1.0.0",
+  "description": "Job Listings With Filtering",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamHaniff/Job-Listings-With-Filtering.git"
+  },
+  "author": "Adam Haniff",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdamHaniff/Job-Listings-With-Filtering/issues"
+  },
+  "homepage": "https://github.com/AdamHaniff/Job-Listings-With-Filtering#readme",
+  "devDependencies": {
+    "node-sass": "^9.0.0",
+    "parcel": "^2.12.0"
+  },
+  "dependencies": {
+    "core-js": "^3.37.0",
+    "regenerator-runtime": "^0.14.1"
+  }
+}
