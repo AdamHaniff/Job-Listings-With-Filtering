@@ -8,6 +8,7 @@ $color-deep-aqua-15-percent: rgba(13, 113, 130, 0.15);
 $color-oslo-grey: #7c8f8f;
 $color-outer-space: #2b3939;
 $color-silver-sand: #b7c4c4;
+$color-black-squeeze: #effafa;
 
 // *********** FONT-FAMILY **********
 $font-league-spartan: "League Spartan", sans-serif;
@@ -16,4 +17,113 @@ $font-league-spartan: "League Spartan", sans-serif;
 $fw-500: 500;
 $fw-700: 700;
 
+// ************** BASE ***************
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  background: $color-black-squeeze;
+  font-family: $font-league-spartan;
+}
+
+html,
+body {
+  height: 100%;
+}
+
 // *********** 375px LAYOUT ***********
+
+// ************** HEADER **************
+.header {
+  background: $color-hippie-blue;
+
+  &__background {
+    display: block;
+  }
+}
+
+// ************** FILTERS *************
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  max-width: 32.7rem;
+  border-radius: 0.5rem;
+  background: $color-white;
+  box-shadow: 0 1.5rem 2rem -0.5rem $color-deep-aqua-15-percent;
+  padding: 2rem 2.5rem 2rem 1.9rem;
+  margin: 0 auto;
+  transform: translateY(-3.6rem);
+  margin-bottom: -3.6rem;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    max-width: 20.5rem;
+  }
+
+  &__clear-btn {
+    background: none;
+    border: none;
+    color: $color-oslo-grey;
+    font-family: $font-league-spartan;
+    font-size: 1.6rem;
+    font-weight: $fw-700;
+    line-height: 2.4rem;
+    letter-spacing: -0.0123rem;
+  }
+}
+
+// ************** FILTER *************
+.filter {
+  display: flex;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  height: 3.2rem;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    background: $color-hippie-blue-10-percent;
+    padding: 0 0.8rem;
+  }
+
+  &__name {
+    color: $color-hippie-blue;
+    font-size: 1.6rem;
+    font-weight: $fw-700;
+    line-height: 2.4rem;
+    letter-spacing: -0.0123rem;
+    transform: translateY(0.1rem);
+  }
+
+  &__remove-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $color-hippie-blue;
+    width: 3.2rem;
+  }
+
+  &__remove-icon {
+    display: block;
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+}
+
+// *************** JOBS **************
+.jobs {
+  margin-top: 5.6rem;
+}
