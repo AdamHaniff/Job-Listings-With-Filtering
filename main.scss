@@ -41,6 +41,35 @@ body {
   height: 100%;
 }
 
+// *************** MIXINS **************
+@mixin new-featured-styles($background) {
+  background: $background;
+  border-radius: 1.2rem;
+  color: $color-white;
+  font-size: 1.4rem;
+  font-weight: $fw-700;
+  line-height: 1.4rem;
+  letter-spacing: -0.0108rem;
+  text-transform: uppercase;
+  padding: 0.7rem 0.8rem 0.3rem;
+}
+
+@mixin filter-container-tag-styles {
+  display: flex;
+  align-items: center;
+  background: $color-hippie-blue-10-percent;
+  padding: 0 0.8rem;
+}
+
+@mixin filter-tag-name-styles {
+  color: $color-hippie-blue;
+  font-size: 1.6rem;
+  font-weight: $fw-700;
+  line-height: 2.4rem;
+  letter-spacing: -0.0123rem;
+  transform: translateY(0.1rem);
+}
+
 // *********** 375px LAYOUT ***********
 
 // ************** HEADER **************
@@ -50,6 +79,11 @@ body {
   &__background {
     display: block;
   }
+}
+
+// *********** FILTERS-JOBS ***********
+.filters-jobs {
+  padding: 0 2.4rem;
 }
 
 // ************** FILTERS *************
@@ -93,19 +127,11 @@ body {
   height: 3.2rem;
 
   &__container {
-    display: flex;
-    align-items: center;
-    background: $color-hippie-blue-10-percent;
-    padding: 0 0.8rem;
+    @include filter-container-tag-styles;
   }
 
   &__name {
-    color: $color-hippie-blue;
-    font-size: 1.6rem;
-    font-weight: $fw-700;
-    line-height: 2.4rem;
-    letter-spacing: -0.0123rem;
-    transform: translateY(0.1rem);
+    @include filter-tag-name-styles;
   }
 
   &__remove-container {
@@ -126,4 +152,107 @@ body {
 // *************** JOBS **************
 .jobs {
   margin-top: 5.6rem;
+}
+
+// **************** JOB ***************
+.job {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 32.7rem;
+  border-radius: 0.5rem;
+  background: $color-white;
+  box-shadow: 0 1.5rem 2rem -0.5rem $color-deep-aqua-15-percent;
+  padding: 3.2rem 2.4rem 2.4rem;
+  border-left: 0.5rem solid $color-hippie-blue;
+  position: relative;
+
+  &__logo {
+    display: block;
+    width: 4.8rem;
+    height: 4.8rem;
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  &__company-new-featured {
+    display: flex;
+    align-items: center;
+    gap: 3.3rem;
+  }
+
+  &__company {
+    color: $color-hippie-blue;
+    font-size: 1.3rem;
+    font-weight: $fw-700;
+  }
+
+  &__new-featured {
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  &__new {
+    @include new-featured-styles($color-hippie-blue);
+  }
+
+  &__featured {
+    @include new-featured-styles($color-outer-space);
+  }
+
+  &__title {
+    color: $color-outer-space;
+    font-size: 1.5rem;
+    font-weight: $fw-700;
+    line-height: 2.4rem;
+  }
+
+  &__time-type-location {
+    display: flex;
+    gap: 1rem;
+    color: $color-oslo-grey;
+    font-size: 1.6rem;
+    font-weight: $fw-500;
+    line-height: 2.4rem;
+    letter-spacing: -0.0123rem;
+  }
+
+  &__bullet-type,
+  &__bullet-location {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  &__bullet-point {
+    display: block;
+    transform: translateY(-0.1rem);
+  }
+}
+
+// **************** TAGS ***************
+.tags {
+  border-top: 0.1rem solid $color-silver-sand;
+  padding-top: 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+}
+
+// **************** TAG ****************
+.tag {
+  @include filter-container-tag-styles;
+  border-radius: 0.4rem;
+  height: 3.2rem;
+
+  &__name {
+    @include filter-tag-name-styles;
+  }
 }
