@@ -84,6 +84,7 @@ body {
 // *********** FILTERS-JOBS ***********
 .filters-jobs {
   padding: 0 2.4rem;
+  margin: 0 auto;
 }
 
 // ************** FILTERS *************
@@ -96,7 +97,6 @@ body {
   background: $color-white;
   box-shadow: 0 1.5rem 2rem -0.5rem $color-deep-aqua-15-percent;
   padding: 2rem 2.5rem 2rem 1.9rem;
-  margin: 0 auto;
   transform: translateY(-3.6rem);
   margin-bottom: -3.6rem;
 
@@ -152,6 +152,9 @@ body {
 // *************** JOBS **************
 .jobs {
   margin-top: 5.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
 // **************** JOB ***************
@@ -255,4 +258,9 @@ body {
   &__name {
     @include filter-tag-name-styles;
   }
+}
+
+// *** CLASSES USED WITH JAVASCRIPT ***
+.hidden {
+  display: none;
 }

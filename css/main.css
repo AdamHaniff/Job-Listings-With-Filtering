@@ -30,6 +30,7 @@ body {
 
 .filters-jobs {
   padding: 0 2.4rem;
+  margin: 0 auto;
 }
 
 .filters {
@@ -41,7 +42,6 @@ body {
   background: #fff;
   box-shadow: 0 1.5rem 2rem -0.5rem rgba(13, 113, 130, 0.15);
   padding: 2rem 2.5rem 2rem 1.9rem;
-  margin: 0 auto;
   transform: translateY(-3.6rem);
   margin-bottom: -3.6rem;
 }
@@ -97,6 +97,9 @@ body {
 
 .jobs {
   margin-top: 5.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
 .job {
@@ -208,4 +211,8 @@ body {
   line-height: 2.4rem;
   letter-spacing: -0.0123rem;
   transform: translateY(0.1rem);
+}
+
+.hidden {
+  display: none;
 }/*# sourceMappingURL=main.css.map */
