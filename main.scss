@@ -83,7 +83,7 @@ body {
 
 // *********** FILTERS-JOBS ***********
 .filters-jobs {
-  padding: 0 2.4rem;
+  padding: 0 2.4rem 3.4rem;
   margin: 0 auto;
 }
 
@@ -159,16 +159,17 @@ body {
 
 // **************** JOB ***************
 .job {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
   max-width: 32.7rem;
   border-radius: 0.5rem;
   background: $color-white;
   box-shadow: 0 1.5rem 2rem -0.5rem $color-deep-aqua-15-percent;
   padding: 3.2rem 2.4rem 2.4rem;
-  border-left: 0.5rem solid $color-hippie-blue;
   position: relative;
+
+  &__info {
+    padding-bottom: 1.5rem;
+    border-bottom: 0.1rem solid $color-silver-sand;
+  }
 
   &__logo {
     display: block;
@@ -242,11 +243,11 @@ body {
 
 // **************** TAGS ***************
 .tags {
-  border-top: 0.1rem solid $color-silver-sand;
-  padding-top: 1.6rem;
+  margin-top: 1.6rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1.6rem;
+  max-width: 26.8rem;
 }
 
 // **************** TAG ****************
@@ -263,4 +264,8 @@ body {
 // *** CLASSES USED WITH JAVASCRIPT ***
 .hidden {
   display: none;
+}
+
+.featured {
+  border-left: 0.5rem solid $color-hippie-blue;
 }

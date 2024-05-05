@@ -29,7 +29,7 @@ body {
 }
 
 .filters-jobs {
-  padding: 0 2.4rem;
+  padding: 0 2.4rem 3.4rem;
   margin: 0 auto;
 }
 
@@ -103,16 +103,16 @@ body {
 }
 
 .job {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
   max-width: 32.7rem;
   border-radius: 0.5rem;
   background: #fff;
   box-shadow: 0 1.5rem 2rem -0.5rem rgba(13, 113, 130, 0.15);
   padding: 3.2rem 2.4rem 2.4rem;
-  border-left: 0.5rem solid #5ca5a5;
   position: relative;
+}
+.job__info {
+  padding-bottom: 1.5rem;
+  border-bottom: 0.1rem solid #b7c4c4;
 }
 .job__logo {
   display: block;
@@ -189,11 +189,11 @@ body {
 }
 
 .tags {
-  border-top: 0.1rem solid #b7c4c4;
-  padding-top: 1.6rem;
+  margin-top: 1.6rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1.6rem;
+  max-width: 26.8rem;
 }
 
 .tag {
@@ -215,4 +215,8 @@ body {
 
 .hidden {
   display: none;
+}
+
+.featured {
+  border-left: 0.5rem solid #5ca5a5;
 }/*# sourceMappingURL=main.css.map */

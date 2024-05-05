@@ -1,13 +1,14 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 import jobsData from "./data.js";
+import bulletPoint from "url:./images/bullet-point.svg";
 
 // VARIABLES
 const jobs = document.querySelector(".jobs");
 
 for (let jobData of jobsData) {
   const jobHTML = `
-  <div class="job">
+  <div class="job ${jobData.featured ? "featured" : ""}">
   <div class="job__info">
     <img
       class="job__logo"
@@ -32,7 +33,7 @@ for (let jobData of jobsData) {
         <div class="job__bullet-type">
           <img
             class="job__bullet-point"
-            src="./images/bullet-point.svg"
+            src=${bulletPoint}
             alt="Bullet Point"
           />
           <span class="job__type">${jobData.contract}</span>
@@ -40,7 +41,7 @@ for (let jobData of jobsData) {
         <div class="job__bullet-location">
           <img
             class="job__bullet-point"
-            src="./images/bullet-point.svg"
+            src=${bulletPoint}
             alt="Bullet Point"
           />
           <span class="job__location">${jobData.location}</span>
@@ -78,4 +79,14 @@ for (let jobData of jobsData) {
   `;
 
   jobs.insertAdjacentHTML("beforeend", jobHTML);
+
+  // Add event listener to listen when a tag is clicked
+  const job = jobs.lastElementChild;
+
+  job.addEventListener("click", function (e) {
+    const tag = e.target.closest(".tag");
+    if (!tag) return;
+
+    console.log(tag);
+  });
 }
