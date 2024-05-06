@@ -5,6 +5,8 @@ import bulletPoint from "url:./images/bullet-point.svg";
 
 // VARIABLES
 const jobs = document.querySelector(".jobs");
+const filters = [];
+const filtersContainer = document.querySelector(".filters");
 
 for (let jobData of jobsData) {
   const jobHTML = `
@@ -87,6 +89,16 @@ for (let jobData of jobsData) {
     const tag = e.target.closest(".tag");
     if (!tag) return;
 
-    console.log(tag);
+    const tagName = tag.querySelector(".tag__name").textContent;
+    if (filters.includes(tagName)) return;
+    filters.push(tagName);
+
+    // Display the filters container
+    filtersContainer.classList.remove("hidden");
+
+    // Insert the tag as a filter inside the 'filtersContainer'
+    const filterHTML = `
+    
+    `;
   });
 }
