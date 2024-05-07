@@ -52,6 +52,7 @@ body {
   max-width: 20.5rem;
 }
 .filters__clear-btn {
+  display: block;
   background: none;
   border: none;
   color: #7c8f8f;
@@ -60,6 +61,7 @@ body {
   font-weight: 700;
   line-height: 2.4rem;
   letter-spacing: -0.0123rem;
+  transform: translateY(0.1rem);
 }
 
 .filter {

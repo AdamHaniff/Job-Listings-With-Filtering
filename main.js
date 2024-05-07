@@ -2,13 +2,16 @@ import "core-js/stable";
 import "regenerator-runtime/runtime";
 import jobsData from "./data.js";
 import bulletPoint from "url:./images/bullet-point.svg";
+import removeIcon from "url:./images/icon-remove.svg";
 
 // VARIABLES
 const jobs = document.querySelector(".jobs");
 const filters = [];
-const filtersContainer = document.querySelector(".filters");
+const filtersParentContainer = document.querySelector(".filters");
+const filtersContainer = document.querySelector(".filters__container");
 
-for (let jobData of jobsData) {
+// FUNCTIONS
+function insertJob(jobData) {
   const jobHTML = `
   <div class="job ${jobData.featured ? "featured" : ""}">
   <div class="job__info">
@@ -80,25 +83,47 @@ for (let jobData of jobsData) {
 </div>
   `;
 
+  // Insert job into 'jobs' container
   jobs.insertAdjacentHTML("beforeend", jobHTML);
-
-  // Add event listener to listen when a tag is clicked
-  const job = jobs.lastElementChild;
-
-  job.addEventListener("click", function (e) {
-    const tag = e.target.closest(".tag");
-    if (!tag) return;
-
-    const tagName = tag.querySelector(".tag__name").textContent;
-    if (filters.includes(tagName)) return;
-    filters.push(tagName);
-
-    // Display the filters container
-    filtersContainer.classList.remove("hidden");
-
-    // Insert the tag as a filter inside the 'filtersContainer'
-    const filterHTML = `
-    
-    `;
-  });
 }
+
+function insertFilter(tagName) {
+  const filterHTML = `
+  <div class="filter">
+    <div class="filter__container">
+      <span class="filter__name">${tagName}</span>
+    </div>
+    <div class="filter__remove-container">
+      <img
+        class="filter__remove-icon"
+        src=${removeIcon}
+        alt="Remove icon"
+      />
+    </div>
+  </div>
+  `;
+
+  filtersContainer.insertAdjacentHTML("beforeend", filterHTML);
+}
+
+// Insert every job
+for (let jobData of jobsData) {
+  insertJob(jobData);
+}
+
+// Add event listener to listen when a tag is clicked
+jobs.addEventListener("click", function (e) {
+  const tag = e.target.closest(".tag");
+  if (!tag) return;
+
+  // Add the tag name to the 'filters' array
+  const tagName = tag.querySelector(".tag__name").textContent;
+  if (filters.includes(tagName)) return;
+  filters.push(tagName);
+
+  // Insert the tag name as a filter inside the 'filtersContainer'
+  insertFilter(tagName);
+
+  // Display the filters parent container
+  filtersParentContainer.classList.remove("hidden");
+});
