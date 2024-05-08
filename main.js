@@ -10,6 +10,14 @@ const filters = [];
 const filtersParentContainer = document.querySelector(".filters");
 const filtersContainer = document.querySelector(".filters__container");
 
+// IIFE FUNCTION
+// Insert every job when the page first loads
+(function insertEveryJob() {
+  for (let jobData of jobsData) {
+    insertJob(jobData);
+  }
+})();
+
 // FUNCTIONS
 function insertJob(jobData) {
   const jobHTML = `
@@ -106,17 +114,31 @@ function insertFilter(tagName) {
   filtersContainer.insertAdjacentHTML("beforeend", filterHTML);
 }
 
-// Insert every job
-for (let jobData of jobsData) {
-  insertJob(jobData);
+function insertFilteredJobs() {
+  // Remove all the jobs from the 'jobs' container
+  jobs.innerHTML = "";
+
+  // Only display jobs that have the tags in the 'filters' array
+  for (let jobData of jobsData) {
+    const jobInfo = [
+      jobData.role,
+      jobData.level,
+      ...jobData.languages,
+      ...jobData.tools,
+    ];
+
+    if (filters.every((filter) => jobInfo.includes(filter))) {
+      insertJob(jobData);
+    }
+  }
 }
 
-// Add event listener to listen when a tag is clicked
-jobs.addEventListener("click", function (e) {
+// EVENT LISTENER CALLBACK FUNCTIONS
+function handleTagClick(e) {
   const tag = e.target.closest(".tag");
   if (!tag) return;
 
-  // Add the tag name to the 'filters' array
+  // Only add the tag name to the 'filters' array if it's not in there
   const tagName = tag.querySelector(".tag__name").textContent;
   if (filters.includes(tagName)) return;
   filters.push(tagName);
@@ -126,4 +148,15 @@ jobs.addEventListener("click", function (e) {
 
   // Display the filters parent container
   filtersParentContainer.classList.remove("hidden");
+
+  // Clear the inner HTML of the jobs container and only insert the filtered jobs
+  insertFilteredJobs();
+}
+
+// EVENT LISTENERS
+jobs.addEventListener("click", handleTagClick);
+
+filtersContainer.addEventListener("click", function (e) {
+  const filterRemoveContainer = e.target.closest(".filter__remove-container");
+  if (!filterRemoveContainer) return;
 });
