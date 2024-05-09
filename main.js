@@ -10,15 +10,13 @@ const filters = [];
 const filtersParentContainer = document.querySelector(".filters");
 const filtersContainer = document.querySelector(".filters__container");
 
-// IIFE FUNCTION
-// Insert every job when the page first loads
-(function insertEveryJob() {
+// FUNCTIONS
+function insertEveryJob() {
   for (let jobData of jobsData) {
     insertJob(jobData);
   }
-})();
+}
 
-// FUNCTIONS
 function insertJob(jobData) {
   const jobHTML = `
   <div class="job ${jobData.featured ? "featured" : ""}">
@@ -133,6 +131,27 @@ function insertFilteredJobs() {
   }
 }
 
+function removeFilter(filterElements, filterDiv) {
+  filterElements.forEach((el, index) => {
+    if (el === filterDiv) {
+      filters.splice(index, 1);
+      filterDiv.remove();
+    }
+  });
+}
+
+function updateJobsBasedOnFilters() {
+  const isFiltersEmpty = filters.length === 0;
+
+  if (isFiltersEmpty) {
+    filtersParentContainer.classList.add("hidden");
+    jobs.innerHTML = "";
+    insertEveryJob();
+  } else {
+    insertFilteredJobs();
+  }
+}
+
 // EVENT LISTENER CALLBACK FUNCTIONS
 function handleTagClick(e) {
   const tag = e.target.closest(".tag");
@@ -153,10 +172,20 @@ function handleTagClick(e) {
   insertFilteredJobs();
 }
 
-// EVENT LISTENERS
-jobs.addEventListener("click", handleTagClick);
-
-filtersContainer.addEventListener("click", function (e) {
+function handleRemoveFilterClick(e) {
   const filterRemoveContainer = e.target.closest(".filter__remove-container");
   if (!filterRemoveContainer) return;
-});
+  const filterDiv = filterRemoveContainer.closest(".filter");
+  const filterElements = document.querySelectorAll(".filter");
+
+  // Remove the filter that was clicked from the 'filters' array and from the HTML
+  removeFilter(filterElements, filterDiv);
+
+  // If the 'filters' array is empty, hide the 'filtersParentContainer' and display every job. If not, then display the updated filtered jobs.
+  updateJobsBasedOnFilters();
+}
+
+// EVENT LISTENERS
+document.addEventListener("DOMContentLoaded", insertEveryJob);
+jobs.addEventListener("click", handleTagClick);
+filtersContainer.addEventListener("click", handleRemoveFilterClick);

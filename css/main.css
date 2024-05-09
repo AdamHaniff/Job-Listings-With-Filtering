@@ -36,7 +36,7 @@ body {
 .filters {
   display: flex;
   align-items: center;
-  gap: 4rem;
+  justify-content: space-between;
   max-width: 32.7rem;
   border-radius: 0.5rem;
   background: #fff;
