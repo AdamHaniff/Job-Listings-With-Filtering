@@ -165,6 +165,12 @@ function handleTagClick(e) {
   // Insert the tag name as a filter inside the 'filtersContainer'
   insertFilter(tagName);
 
+  // Scroll smoothly to the top of the page
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+
   // Display the filters parent container
   filtersParentContainer.classList.remove("hidden");
 
