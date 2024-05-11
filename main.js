@@ -9,6 +9,7 @@ const jobs = document.querySelector(".jobs");
 const filters = [];
 const filtersParentContainer = document.querySelector(".filters");
 const filtersContainer = document.querySelector(".filters__container");
+const clearFiltersBtn = document.querySelector(".filters__clear-btn");
 
 // FUNCTIONS
 function insertEveryJob() {
@@ -140,16 +141,27 @@ function removeFilter(filterElements, filterDiv) {
   });
 }
 
+function resetHTMLToDefault() {
+  filtersParentContainer.classList.add("hidden");
+  jobs.innerHTML = "";
+  insertEveryJob();
+}
+
 function updateJobsBasedOnFilters() {
   const isFiltersEmpty = filters.length === 0;
 
   if (isFiltersEmpty) {
-    filtersParentContainer.classList.add("hidden");
-    jobs.innerHTML = "";
-    insertEveryJob();
+    resetHTMLToDefault();
   } else {
     insertFilteredJobs();
   }
+}
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
 }
 
 // EVENT LISTENER CALLBACK FUNCTIONS
@@ -166,10 +178,7 @@ function handleTagClick(e) {
   insertFilter(tagName);
 
   // Scroll smoothly to the top of the page
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
+  scrollToTop();
 
   // Display the filters parent container
   filtersParentContainer.classList.remove("hidden");
@@ -195,3 +204,17 @@ function handleRemoveFilterClick(e) {
 document.addEventListener("DOMContentLoaded", insertEveryJob);
 jobs.addEventListener("click", handleTagClick);
 filtersContainer.addEventListener("click", handleRemoveFilterClick);
+
+clearFiltersBtn.addEventListener("click", function (e) {
+  const clearBtn = e.target;
+  if (!clearBtn) return;
+
+  // Remove all filters from the 'filters' array
+  filters.length = 0;
+
+  // Remove all filters from the 'filtersContainer'
+  filtersContainer.innerHTML = "";
+
+  // Hide the 'filtersParentContainer', remove all jobs currently being displayed, and insert every job into the 'jobs' container
+  resetHTMLToDefault();
+});
