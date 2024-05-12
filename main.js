@@ -200,12 +200,7 @@ function handleRemoveFilterClick(e) {
   updateJobsBasedOnFilters();
 }
 
-// EVENT LISTENERS
-document.addEventListener("DOMContentLoaded", insertEveryJob);
-jobs.addEventListener("click", handleTagClick);
-filtersContainer.addEventListener("click", handleRemoveFilterClick);
-
-clearFiltersBtn.addEventListener("click", function (e) {
+function handleClearFiltersBtnClick(e) {
   const clearBtn = e.target;
   if (!clearBtn) return;
 
@@ -215,6 +210,12 @@ clearFiltersBtn.addEventListener("click", function (e) {
   // Remove all filters from the 'filtersContainer'
   filtersContainer.innerHTML = "";
 
-  // Hide the 'filtersParentContainer', remove all jobs currently being displayed, and insert every job into the 'jobs' container
+  // Hide the 'filtersParentContainer', remove all filtered jobs currently being displayed, and display every job
   resetHTMLToDefault();
-});
+}
+
+// EVENT LISTENERS
+document.addEventListener("DOMContentLoaded", insertEveryJob);
+jobs.addEventListener("click", handleTagClick);
+filtersContainer.addEventListener("click", handleRemoveFilterClick);
+clearFiltersBtn.addEventListener("click", handleClearFiltersBtnClick);
