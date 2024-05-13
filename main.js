@@ -180,7 +180,7 @@ function handleTagClick(e) {
   // Scroll smoothly to the top of the page
   scrollToTop();
 
-  // Display the filters parent container
+  // Display the 'filtersParentContainer'
   filtersParentContainer.classList.remove("hidden");
 
   // Clear the inner HTML of the jobs container and only insert the filtered jobs
