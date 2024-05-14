@@ -1,0 +1,277 @@
+// ********* DESIGN SYSTEM *********
+
+// ************* COLORS *************
+$color-hippie-blue: #5ca5a5;
+$color-hippie-blue-10-percent: rgba(92, 165, 165, 0.1);
+$color-white: #fff;
+$color-deep-aqua-15-percent: rgba(13, 113, 130, 0.15);
+$color-oslo-grey: #7c8f8f;
+$color-outer-space: #2b3939;
+$color-silver-sand: #b7c4c4;
+$color-black-squeeze: #effafa;
+
+// *********** FONT-FAMILY **********
+$font-league-spartan: "League Spartan", sans-serif;
+
+// ********** FONT-WEIGHTS **********
+$fw-500: 500;
+$fw-700: 700;
+
+// ************** BASE ***************
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  background: $color-black-squeeze;
+  font-family: $font-league-spartan;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+// *************** MIXINS **************
+@mixin new-featured-styles($background) {
+  background: $background;
+  border-radius: 1.2rem;
+  color: $color-white;
+  font-size: 1.4rem;
+  font-weight: $fw-700;
+  line-height: 1.4rem;
+  letter-spacing: -0.0108rem;
+  text-transform: uppercase;
+  padding: 0.7rem 0.8rem 0.3rem;
+}
+
+@mixin filter-container-tag-styles {
+  display: flex;
+  align-items: center;
+  background: $color-hippie-blue-10-percent;
+  padding: 0 0.8rem;
+}
+
+@mixin filter-tag-name-styles {
+  color: $color-hippie-blue;
+  font-size: 1.6rem;
+  font-weight: $fw-700;
+  line-height: 2.4rem;
+  letter-spacing: -0.0123rem;
+  transform: translateY(0.1rem);
+}
+
+// *********** 375px LAYOUT ***********
+
+// ************** HEADER **************
+.header {
+  background: $color-hippie-blue;
+
+  &__background {
+    display: block;
+  }
+}
+
+// *********** FILTERS-JOBS ***********
+.filters-jobs {
+  padding: 0 2.4rem 3.4rem;
+  margin: 0 auto;
+}
+
+// ************** FILTERS *************
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 32.7rem;
+  border-radius: 0.5rem;
+  background: $color-white;
+  box-shadow: 0 1.5rem 2rem -0.5rem $color-deep-aqua-15-percent;
+  padding: 2rem 2.5rem 2rem 1.9rem;
+  transform: translateY(-3.6rem);
+  margin-bottom: -3.6rem;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6rem;
+    max-width: 20.5rem;
+  }
+
+  &__clear-btn {
+    display: block;
+    background: none;
+    border: none;
+    color: $color-oslo-grey;
+    font-family: $font-league-spartan;
+    font-size: 1.6rem;
+    font-weight: $fw-700;
+    line-height: 2.4rem;
+    letter-spacing: -0.0123rem;
+    transform: translateY(0.1rem);
+  }
+}
+
+// ************** FILTER *************
+.filter {
+  display: flex;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  height: 3.2rem;
+
+  &__container {
+    @include filter-container-tag-styles;
+  }
+
+  &__name {
+    @include filter-tag-name-styles;
+  }
+
+  &__remove-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $color-hippie-blue;
+    width: 3.2rem;
+  }
+
+  &__remove-icon {
+    display: block;
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+}
+
+// *************** JOBS **************
+.jobs {
+  margin-top: 5.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+// **************** JOB ***************
+.job {
+  max-width: 32.7rem;
+  border-radius: 0.5rem;
+  background: $color-white;
+  box-shadow: 0 1.5rem 2rem -0.5rem $color-deep-aqua-15-percent;
+  padding: 3.2rem 2.4rem 2.4rem;
+  position: relative;
+
+  &__info {
+    padding-bottom: 1.5rem;
+    border-bottom: 0.1rem solid $color-silver-sand;
+  }
+
+  &__logo {
+    display: block;
+    width: 4.8rem;
+    height: 4.8rem;
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  &__company-new-featured {
+    display: flex;
+    align-items: center;
+    gap: 3.3rem;
+  }
+
+  &__company {
+    color: $color-hippie-blue;
+    font-size: 1.3rem;
+    font-weight: $fw-700;
+  }
+
+  &__new-featured {
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  &__new {
+    @include new-featured-styles($color-hippie-blue);
+  }
+
+  &__featured {
+    @include new-featured-styles($color-outer-space);
+  }
+
+  &__title {
+    color: $color-outer-space;
+    font-size: 1.5rem;
+    font-weight: $fw-700;
+    line-height: 2.4rem;
+  }
+
+  &__time-type-location {
+    display: flex;
+    gap: 1rem;
+    color: $color-oslo-grey;
+    font-size: 1.6rem;
+    font-weight: $fw-500;
+    line-height: 2.4rem;
+    letter-spacing: -0.0123rem;
+  }
+
+  &__bullet-type,
+  &__bullet-location {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  &__bullet-point {
+    display: block;
+    transform: translateY(-0.1rem);
+  }
+}
+
+// **************** TAGS ***************
+.tags {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  max-width: 26.8rem;
+}
+
+// **************** TAG ****************
+.tag {
+  @include filter-container-tag-styles;
+  border-radius: 0.4rem;
+  height: 3.2rem;
+
+  &__name {
+    @include filter-tag-name-styles;
+  }
+}
+
+// ******* 320px - 374px LAYOUT *******
+@media only screen and (max-width: 23.375) {
+}
+
+// *** CLASSES USED WITH JAVASCRIPT ***
+.hidden {
+  display: none;
+}
+
+.featured {
+  border-left: 0.5rem solid $color-hippie-blue;
+}

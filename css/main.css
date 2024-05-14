@@ -1,0 +1,224 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  background: #effafa;
+  font-family: "League Spartan", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.header {
+  background: #5ca5a5;
+}
+.header__background {
+  display: block;
+}
+
+.filters-jobs {
+  padding: 0 2.4rem 3.4rem;
+  margin: 0 auto;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 32.7rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 1.5rem 2rem -0.5rem rgba(13, 113, 130, 0.15);
+  padding: 2rem 2.5rem 2rem 1.9rem;
+  transform: translateY(-3.6rem);
+  margin-bottom: -3.6rem;
+}
+.filters__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  max-width: 20.5rem;
+}
+.filters__clear-btn {
+  display: block;
+  background: none;
+  border: none;
+  color: #7c8f8f;
+  font-family: "League Spartan", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  letter-spacing: -0.0123rem;
+  transform: translateY(0.1rem);
+}
+
+.filter {
+  display: flex;
+  border-radius: 0.4rem;
+  overflow: hidden;
+  height: 3.2rem;
+}
+.filter__container {
+  display: flex;
+  align-items: center;
+  background: rgba(92, 165, 165, 0.1);
+  padding: 0 0.8rem;
+}
+.filter__name {
+  color: #5ca5a5;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  letter-spacing: -0.0123rem;
+  transform: translateY(0.1rem);
+}
+.filter__remove-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #5ca5a5;
+  width: 3.2rem;
+}
+.filter__remove-icon {
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.jobs {
+  margin-top: 5.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.job {
+  max-width: 32.7rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  box-shadow: 0 1.5rem 2rem -0.5rem rgba(13, 113, 130, 0.15);
+  padding: 3.2rem 2.4rem 2.4rem;
+  position: relative;
+}
+.job__info {
+  padding-bottom: 1.5rem;
+  border-bottom: 0.1rem solid #b7c4c4;
+}
+.job__logo {
+  display: block;
+  width: 4.8rem;
+  height: 4.8rem;
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+}
+.job__description {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.job__company-new-featured {
+  display: flex;
+  align-items: center;
+  gap: 3.3rem;
+}
+.job__company {
+  color: #5ca5a5;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.job__new-featured {
+  display: flex;
+  gap: 0.8rem;
+}
+.job__new {
+  background: #5ca5a5;
+  border-radius: 1.2rem;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.4rem;
+  letter-spacing: -0.0108rem;
+  text-transform: uppercase;
+  padding: 0.7rem 0.8rem 0.3rem;
+}
+.job__featured {
+  background: #2b3939;
+  border-radius: 1.2rem;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.4rem;
+  letter-spacing: -0.0108rem;
+  text-transform: uppercase;
+  padding: 0.7rem 0.8rem 0.3rem;
+}
+.job__title {
+  color: #2b3939;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+}
+.job__time-type-location {
+  display: flex;
+  gap: 1rem;
+  color: #7c8f8f;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  letter-spacing: -0.0123rem;
+}
+.job__bullet-type, .job__bullet-location {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+.job__bullet-point {
+  display: block;
+  transform: translateY(-0.1rem);
+}
+
+.tags {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
+  max-width: 26.8rem;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  background: rgba(92, 165, 165, 0.1);
+  padding: 0 0.8rem;
+  border-radius: 0.4rem;
+  height: 3.2rem;
+}
+.tag__name {
+  color: #5ca5a5;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  letter-spacing: -0.0123rem;
+  transform: translateY(0.1rem);
+}
+
+.hidden {
+  display: none;
+}
+
+.featured {
+  border-left: 0.5rem solid #5ca5a5;
+}/*# sourceMappingURL=main.css.map */
