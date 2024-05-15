@@ -79,20 +79,28 @@ body {
   &__background {
     display: block;
     max-width: 100%;
+    width: 100%;
+    height: 15.6rem;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
 
 // *********** FILTERS-JOBS ***********
 .filters-jobs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 0 2.4rem 3.4rem;
-  margin: 0 auto;
 }
 
 // ************** FILTERS *************
 .filters {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 4rem;
+  width: 100%;
   max-width: 32.7rem;
   border-radius: 0.5rem;
   background: $color-white;
@@ -155,7 +163,7 @@ body {
 // *************** JOBS **************
 .jobs {
   margin-top: 5.6rem;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   gap: 4rem;
 }
@@ -280,6 +288,53 @@ body {
   // *************** TAGS **************
   .tags {
     gap: 1.57rem;
+  }
+}
+
+// ************ 768px LAYOUT ***********
+@media only screen and (min-width: 48em) {
+  // ********** FILTERS-JOBS **********
+  .filters-jobs {
+    padding: 0 0 6.4rem;
+  }
+
+  // ************** FILTERS ************
+  .filters {
+    max-width: 59.2rem;
+    padding: 2rem 2.1rem;
+
+    &__container {
+      max-width: initial;
+    }
+  }
+
+  // ************** JOBS **************
+  .jobs {
+    margin-top: 4rem;
+    gap: 2.4rem;
+  }
+
+  // *************** JOB ***************
+  .job {
+    display: flex;
+    max-width: 59.2rem;
+    padding: 3.2rem 2.1rem;
+
+    &__info {
+      display: flex;
+      align-items: center;
+      gap: 2.4rem;
+      padding-bottom: initial;
+      border-bottom: initial;
+    }
+
+    &__logo {
+      position: initial;
+      top: initial;
+      transform: initial;
+      width: 6.8rem;
+      height: 6.8rem;
+    }
   }
 }
 

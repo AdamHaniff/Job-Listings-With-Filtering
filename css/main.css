@@ -27,17 +27,25 @@ body {
 .header__background {
   display: block;
   max-width: 100%;
+  width: 100%;
+  height: 15.6rem;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .filters-jobs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 0 2.4rem 3.4rem;
-  margin: 0 auto;
 }
 
 .filters {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 4rem;
+  width: 100%;
   max-width: 32.7rem;
   border-radius: 0.5rem;
   background: #fff;
@@ -100,7 +108,7 @@ body {
 
 .jobs {
   margin-top: 5.6rem;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   gap: 4rem;
 }
@@ -225,6 +233,41 @@ body {
   }
   .tags {
     gap: 1.57rem;
+  }
+}
+@media only screen and (min-width: 48em) {
+  .filters-jobs {
+    padding: 0 0 6.4rem;
+  }
+  .filters {
+    max-width: 59.2rem;
+    padding: 2rem 2.1rem;
+  }
+  .filters__container {
+    max-width: initial;
+  }
+  .jobs {
+    margin-top: 4rem;
+    gap: 2.4rem;
+  }
+  .job {
+    display: flex;
+    max-width: 59.2rem;
+    padding: 3.2rem 2.1rem;
+  }
+  .job__info {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    padding-bottom: initial;
+    border-bottom: initial;
+  }
+  .job__logo {
+    position: initial;
+    top: initial;
+    transform: initial;
+    width: 6.8rem;
+    height: 6.8rem;
   }
 }
 .hidden {
