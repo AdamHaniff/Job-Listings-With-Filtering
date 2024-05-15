@@ -26,6 +26,7 @@ body {
 }
 .header__background {
   display: block;
+  max-width: 100%;
 }
 
 .filters-jobs {
@@ -36,7 +37,7 @@ body {
 .filters {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 4rem;
   max-width: 32.7rem;
   border-radius: 0.5rem;
   background: #fff;
@@ -215,6 +216,17 @@ body {
   transform: translateY(0.1rem);
 }
 
+@media only screen and (max-width: 23.375em) {
+  .job__company-new-featured {
+    gap: 2.2rem;
+  }
+  .job__time-type-location {
+    font-size: 1.5rem;
+  }
+  .tags {
+    gap: 1.57rem;
+  }
+}
 .hidden {
   display: none;
 }

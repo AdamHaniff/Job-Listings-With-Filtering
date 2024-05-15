@@ -78,6 +78,7 @@ body {
 
   &__background {
     display: block;
+    max-width: 100%;
   }
 }
 
@@ -91,7 +92,7 @@ body {
 .filters {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 4rem;
   max-width: 32.7rem;
   border-radius: 0.5rem;
   background: $color-white;
@@ -264,7 +265,22 @@ body {
 }
 
 // ******* 320px - 374px LAYOUT *******
-@media only screen and (max-width: 23.375) {
+@media only screen and (max-width: 23.375em) {
+  // *************** JOB ***************
+  .job {
+    &__company-new-featured {
+      gap: 2.2rem;
+    }
+
+    &__time-type-location {
+      font-size: 1.5rem;
+    }
+  }
+
+  // *************** TAGS **************
+  .tags {
+    gap: 1.57rem;
+  }
 }
 
 // *** CLASSES USED WITH JAVASCRIPT ***
