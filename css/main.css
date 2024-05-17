@@ -240,7 +240,7 @@ body {
     padding: 0 0 6.4rem;
   }
   .filters {
-    max-width: 59.2rem;
+    max-width: 63.5rem;
     padding: 2rem 2.1rem;
   }
   .filters__container {
@@ -252,7 +252,7 @@ body {
   }
   .job {
     display: flex;
-    max-width: 59.2rem;
+    max-width: 63.5rem;
     padding: 3.2rem 2.1rem;
   }
   .job__info {
