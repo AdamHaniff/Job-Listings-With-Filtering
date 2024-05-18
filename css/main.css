@@ -293,6 +293,43 @@ body {
     max-width: 22.4rem;
   }
 }
+@media only screen and (min-width: 90em) {
+  .filters-jobs {
+    padding: 0 0 12rem;
+  }
+  .filters {
+    width: 111rem;
+    padding: 2rem 4rem;
+  }
+  .jobs {
+    margin-top: 7.6rem;
+  }
+  .job {
+    width: 111rem;
+    padding: 3.2rem 4rem;
+  }
+  .job__logo {
+    width: 8.8rem;
+    height: 8.8rem;
+  }
+  .job__company {
+    font-size: 1.8rem;
+  }
+  .job__title {
+    font-size: 2.2rem;
+  }
+  .job__time-type-location {
+    gap: 1.6rem;
+    font-size: 1.8rem;
+    letter-spacing: -0.0138rem;
+  }
+  .job__bullet-type, .job__bullet-location {
+    gap: 1.6rem;
+  }
+  .tags {
+    max-width: initial;
+  }
+}
 .hidden {
   display: none;
 }
