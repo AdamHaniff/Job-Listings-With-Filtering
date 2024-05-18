@@ -300,7 +300,8 @@ body {
 
   // ************** FILTERS ************
   .filters {
-    max-width: 63.5rem;
+    width: 63.5rem;
+    max-width: initial;
     padding: 2rem 2.1rem;
 
     &__container {
@@ -317,7 +318,10 @@ body {
   // *************** JOB ***************
   .job {
     display: flex;
-    max-width: 63.5rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 63.5rem;
+    max-width: initial;
     padding: 3.2rem 2.1rem;
 
     &__info {
@@ -332,9 +336,36 @@ body {
       position: initial;
       top: initial;
       transform: initial;
-      width: 6.8rem;
-      height: 6.8rem;
     }
+
+    &__company-new-featured {
+      gap: 1.5rem;
+    }
+
+    &__company {
+      font-size: 1.5rem;
+    }
+
+    &__title {
+      font-size: 1.8rem;
+    }
+
+    &__time-type-location {
+      gap: 1.3rem;
+      font-size: 1.7rem;
+      letter-spacing: -0.013rem;
+    }
+
+    &__bullet-type,
+    &__bullet-location {
+      gap: 1.3rem;
+    }
+  }
+
+  // *************** TAGS **************
+  .tags {
+    margin-top: initial;
+    max-width: 22.4rem;
   }
 }
 

@@ -240,7 +240,8 @@ body {
     padding: 0 0 6.4rem;
   }
   .filters {
-    max-width: 63.5rem;
+    width: 63.5rem;
+    max-width: initial;
     padding: 2rem 2.1rem;
   }
   .filters__container {
@@ -252,7 +253,10 @@ body {
   }
   .job {
     display: flex;
-    max-width: 63.5rem;
+    justify-content: space-between;
+    align-items: center;
+    width: 63.5rem;
+    max-width: initial;
     padding: 3.2rem 2.1rem;
   }
   .job__info {
@@ -266,8 +270,27 @@ body {
     position: initial;
     top: initial;
     transform: initial;
-    width: 6.8rem;
-    height: 6.8rem;
+  }
+  .job__company-new-featured {
+    gap: 1.5rem;
+  }
+  .job__company {
+    font-size: 1.5rem;
+  }
+  .job__title {
+    font-size: 1.8rem;
+  }
+  .job__time-type-location {
+    gap: 1.3rem;
+    font-size: 1.7rem;
+    letter-spacing: -0.013rem;
+  }
+  .job__bullet-type, .job__bullet-location {
+    gap: 1.3rem;
+  }
+  .tags {
+    margin-top: initial;
+    max-width: 22.4rem;
   }
 }
 .hidden {
