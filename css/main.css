@@ -330,6 +330,28 @@ body {
     max-width: initial;
   }
 }
+@media only screen and (min-width: 62em) {
+  .filters__clear-btn:hover {
+    cursor: pointer;
+    color: #5ca5a5;
+    text-decoration: underline;
+  }
+  .filter__remove-container:hover {
+    cursor: pointer;
+    background: #2b3939;
+  }
+  .job__title:hover {
+    cursor: pointer;
+    color: #5ca5a5;
+  }
+  .tag:hover {
+    cursor: pointer;
+    background: #5ca5a5;
+  }
+  .tag:hover .tag__name {
+    color: #fff;
+  }
+}
 .hidden {
   display: none;
 }

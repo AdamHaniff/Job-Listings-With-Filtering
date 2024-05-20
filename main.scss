@@ -426,6 +426,42 @@ body {
 // ******* DESKTOP HOVER STATES *******
 // ************ 992px LAYOUT ***********
 @media only screen and (min-width: 62em) {
+  // ************* FILTERS *************
+  .filters {
+    &__clear-btn:hover {
+      cursor: pointer;
+      color: $color-hippie-blue;
+      text-decoration: underline;
+    }
+  }
+
+  // ************* FILTER *************
+  .filter {
+    &__remove-container:hover {
+      cursor: pointer;
+      background: $color-outer-space;
+    }
+  }
+
+  // *************** JOB ***************
+  .job {
+    &__title:hover {
+      cursor: pointer;
+      color: $color-hippie-blue;
+    }
+  }
+
+  // *************** TAG ***************
+  .tag {
+    &:hover {
+      cursor: pointer;
+      background: $color-hippie-blue;
+
+      .tag__name {
+        color: $color-white;
+      }
+    }
+  }
 }
 
 // *** CLASSES USED WITH JAVASCRIPT ***
