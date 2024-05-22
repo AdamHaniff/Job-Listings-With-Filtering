@@ -1,0 +1,53 @@
+// *********** 1440px LAYOUT ***********
+@media only screen and (min-width: 90em) {
+  // ********** FILTERS-JOBS **********
+  .filters-jobs {
+    padding: 0 0 12rem;
+  }
+
+  // ************* FILTERS *************
+  .filters {
+    width: 111rem;
+    padding: 2rem 4rem;
+  }
+
+  // ************** JOBS **************
+  .jobs {
+    margin-top: 7.6rem;
+  }
+
+  // *************** JOB ***************
+  .job {
+    width: 111rem;
+    padding: 3.2rem 4rem;
+
+    &__logo {
+      width: 8.8rem;
+      height: 8.8rem;
+    }
+
+    &__company {
+      font-size: 1.8rem;
+    }
+
+    &__title {
+      font-size: 2.2rem;
+    }
+
+    &__time-type-location {
+      gap: 1.6rem;
+      font-size: 1.8rem;
+      letter-spacing: -0.0138rem;
+    }
+
+    &__bullet-type,
+    &__bullet-location {
+      gap: 1.6rem;
+    }
+  }
+
+  // ************** TAGS **************
+  .tags {
+    max-width: initial;
+  }
+}
