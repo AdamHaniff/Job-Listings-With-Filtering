@@ -1,8 +1,8 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 import jobsData from "./data.js";
-import bulletPoint from "url:./images/bullet-point.svg";
-import removeIcon from "url:./images/icon-remove.svg";
+import bulletPoint from "url:../images/bullet-point.svg";
+import removeIcon from "url:../images/icon-remove.svg";
 
 // VARIABLES
 const jobs = document.querySelector(".jobs");

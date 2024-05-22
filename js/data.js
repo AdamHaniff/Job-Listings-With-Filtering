@@ -1,13 +1,13 @@
-import photosnapLogo from "url:./images/photosnap.svg";
-import manageLogo from "url:./images/manage.svg";
-import accountLogo from "url:./images/account.svg";
-import myHomeLogo from "url:./images/myhome.svg";
-import loopStudiosLogo from "url:./images/loop-studios.svg";
-import faceItLogo from "url:./images/faceit.svg";
-import shortlyLogo from "url:./images/shortly.svg";
-import insureLogo from "url:./images/insure.svg";
-import eyecamLogo from "url:./images/eyecam-co.svg";
-import airFilterLogo from "url:./images/the-air-filter-company.svg";
+import photosnapLogo from "url:../images/photosnap.svg";
+import manageLogo from "url:../images/manage.svg";
+import accountLogo from "url:../images/account.svg";
+import myHomeLogo from "url:../images/myhome.svg";
+import loopStudiosLogo from "url:../images/loop-studios.svg";
+import faceItLogo from "url:../images/faceit.svg";
+import shortlyLogo from "url:../images/shortly.svg";
+import insureLogo from "url:../images/insure.svg";
+import eyecamLogo from "url:../images/eyecam-co.svg";
+import airFilterLogo from "url:../images/the-air-filter-company.svg";
 
 const jobsData = [
   {
